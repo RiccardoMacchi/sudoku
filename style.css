@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#grid{
+    margin: 30px auto;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#title{
+    text-align: center;
+}
+
+h1{
+    margin: 10px auto;
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, blue, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.grid_cell{
+    flex-basis: calc(100% / 9);
+    aspect-ratio: 1/1;
+    border: 0.5px solid black;
+    position: relative;
+}
+
+.grid_cell span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.border_left_red{
+    border-left: 1px red;
+}
+
+.error{
+    background-color: red;
+}
+
+.preinsert{
+    background-color: rgb(168, 167, 167);
+}
+
+#check{
+    text-align: center;
+    margin: 10px auto;
+}
+
+.none{
+    display: none;
+}
+
+#wrapper_grid{
+    position: relative;
+}
+
+#end_game{
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to right, blue, red);
+    text-align: center;
+    border-radius: 5px;
+    padding: 80px 10px;
+    color: white;
+}
+ /* BTNS */
+.btns{
+    margin: 15px auto;
+}
+
+#btn_start{
+    padding: 5px 20px;
+    background: linear-gradient(to right, blue, red);
+    color: white;
+    border-radius: 5px;
+}
+
+#btn_check{
+    padding: 5px 20px;
+    background: linear-gradient(to right, green, yellow);
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#btn_complete{
+    padding: 5px 20px;
+    background: linear-gradient(to right, red, blue);
+    border-radius: 5px;
+    color: white;
+    border: 1px solid black;
+}
+
+@media screen and (max-width:456px) {
+    #grid{
+        max-width: 90%;
+    }
+}
