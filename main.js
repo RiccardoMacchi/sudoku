@@ -39,12 +39,13 @@ function isValidPlacement(grid, row, col, num) {
 
 function printRow(){
     gridHtml.innerHTML = ''
+    gridHtml.classList.add('border-grid')
     if(autocomplete){
         for (let i = 0; i < grid.length; i++) {
             let printRow = ''
             for (let n = 0; n < grid[i].length; n++) {            
-                randomNumber = Math.floor(Math.random() * 9) + 1
-                printRow += `<div class='grid_cell preinsert'><span>${grid[i][n]}</span></div>`      
+                printRow += `<div class='grid_cell preinsert ${n === 2 || n === 5 ? 'border-right' : ''} ${n === 2 || n === 5 ? 'border-right' : ''}
+                    ${i === 2 || i === 5 ? 'border-bottom' : ''}'><span>${grid[i][n]}</span></div>`      
             }
             gridHtml.innerHTML += printRow
         }
@@ -53,7 +54,17 @@ function printRow(){
             let printRow = ''
             for (let n = 0; n < grid[i].length; n++) {            
                 randomNumber = Math.floor(Math.random() * 9) + 1
-                printRow += `<div class='grid_cell ${n <= randomNumber + 1 && n >= randomNumber ? 'preinsert' : ''}'><span>${n <= randomNumber + 1 && n >= randomNumber ? grid[i][n] : ''}</span></div>`      
+                printRow += 
+                `<div class='grid_cell 
+                    ${n <= randomNumber + 1 && n >= randomNumber ? 'preinsert' : ''}
+                    ${n === 2 || n === 5 ? 'border-right' : ''}
+                    ${i === 2 || i === 5 ? 'border-bottom' : ''}
+                    ${n === 3 || n === 6 ? 'border-left' : ''}
+                    ${i === 3 || i === 6 ? 'border-top' : ''}
+
+                    '>
+                    <span>${n <= randomNumber + 1 && n >= randomNumber ? grid[i][n] : ''}</span>
+                </div>`      
             }
             gridHtml.innerHTML += printRow
         }

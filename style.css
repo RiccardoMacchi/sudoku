@@ -11,6 +11,10 @@
     justify-content: flex-start;
     flex-wrap: wrap;
 }
+.border-grid{
+    border: 2px solid rgb(47, 38, 230);
+    border-radius: 5px;
+}
 
 #title{
     text-align: center;
@@ -29,9 +33,23 @@ h1{
 .grid_cell{
     flex-basis: calc(100% / 9);
     aspect-ratio: 1/1;
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(93, 93, 93);
     position: relative;
 }
+
+.border-left{
+    border-left: 1.5px solid rgb(47, 38, 230);
+}
+.border-right{
+    border-right: 1.5px solid rgb(47, 38, 230);
+}
+.border-top{
+    border-top: 1.5px solid rgb(47, 38, 230);
+}
+.border-bottom{
+    border-bottom: 1.5px solid rgb(47, 38, 230);
+}
+
 
 .grid_cell span{
     position: absolute;
@@ -40,13 +58,17 @@ h1{
     transform: translate(-50%,-50%);
 }
 
-.border_left_red{
-    border-left: 1px red;
+.correct {
+    background-color: #4CAF50;
+    border-color: greenyellow;
 }
 
-.error{
-    background-color: red;
+.error {
+    background-color: #f44336;
+    border-color: red;
+
 }
+
 
 .preinsert{
     background-color: rgb(168, 167, 167);
@@ -73,9 +95,12 @@ h1{
     transform: translate(-50%,-50%);
     background: linear-gradient(to right, blue, red);
     text-align: center;
-    border-radius: 5px;
-    padding: 80px 10px;
+    border-radius: 25px;
     color: white;
+}
+
+#end_game div{
+    padding: 50px 40px;    
 }
  /* BTNS */
 .btns{
